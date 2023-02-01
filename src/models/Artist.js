@@ -1,4 +1,5 @@
 const { DataTypes } = require('sequelize');
+const { StatusType } = require('../dataType');
 
 module.exports = (sequelize) => {
     sequelize.define('Artist', {
@@ -17,9 +18,8 @@ module.exports = (sequelize) => {
             allowNull: false,
             field: 'Name'
         },
-        // Status: Active, Disabled
         status: {
-            type: DataTypes.STRING,
+            type: StatusType, 
             allowNull: false,
             defaultValue: 'Active',
             field: 'Status'
