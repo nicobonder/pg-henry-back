@@ -39,7 +39,7 @@ module.exports = (sequelize) => {
             field: 'EndDate'
         },
         startTime: {
-            type: DataTypes.STRING,
+            type: DataTypes.TIME,
             allowNull: false,
             field: 'StartTime'
         },
