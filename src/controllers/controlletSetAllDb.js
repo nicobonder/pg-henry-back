@@ -454,7 +454,7 @@ const  setAllDb = async() => {
             description: 'La música es una forma de comunicación sin barreras, y en este concierto, la orquesta Soulful Rhapsody te invita a unirte a ellos en una aventura musical llena de creatividad, libertad y, sobre todo, improvisación',
             startDate: '2023-03-16',
             endDate: '2023-03-16',
-            startTime: '13:00:00',
+            startTime: '19:00:00',
             stock: 1700,
             price: 3400,
             categories : [
