@@ -1,21 +1,19 @@
 const { Router } = require('express');
-const { getUsers } = require('../../../controllers/admin/user/controllerGetUsers');
+const { getOrders } = require('../../../controllers/admin/order/controllerGetOrders');
 const router = Router();
 
-
-// GET /admin/users
+// GET /admin/orders
 router.get(
     '/',
     async (req, res, next) => {
-        // console.log("routeGetUsers => entra")
         try {
             const { page, size, sort, filter } = req.query;
 
             // console.log('filter query: ', filter);
 
-            const users = await getUsers(page, size, sort, filter);
+            const orders = await getOrders(page, size, sort, filter);
 
-            res.status(200).json(users);
+            res.status(200).json(orders);
         } catch (error) {
             next(error)
         }
