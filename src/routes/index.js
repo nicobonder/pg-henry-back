@@ -12,6 +12,7 @@ const customerRouter = require('./admin/customer');
 const orderRouter = require('./admin/order');
 const reviewRouter = require('./admin/review');
 const routeCreateOrder = require('./client/routePostOrder');
+const routeMailer = require('./client/routeSendMail')
 
 const router = Router();
 
@@ -20,6 +21,7 @@ router.use('/products', routeGetProductDetail);
 router.use('/categories', routeGetAllCategories);
 router.use('/order', routeCreateOrder);
 router.use('/user', routeGetDetailedUser);
+router.use('/send-mail', routeMailer);
 
 // Admin routes
 router.use('/admin', artistRouter);
