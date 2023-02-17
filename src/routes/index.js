@@ -21,7 +21,7 @@ router.use('/products', routeGetProductDetail);
 router.use('/categories', routeGetAllCategories);
 router.use('/order', routeCreateOrder);
 router.use('/user', routeGetDetailedUser);
-router.use('/send-mail', routeMailer);
+router.use('/mailer', routeMailer);
 
 // Admin routes
 router.use('/admin', artistRouter);
