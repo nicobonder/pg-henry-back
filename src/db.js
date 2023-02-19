@@ -1,16 +1,13 @@
-require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 
 let setSSL = false;
+console.log('el entorno es ', process.env.NODE_ENV);
 
-console.log('el entorno es ', process.env.ENVIROMENT);
-
-if (process.env.ENVIROMENT === 'production') {
+if (process.env.NODE_ENV === 'production') {
   setSSL = true;
 }
-
 console.log('el SSL es ', setSSL)
 
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
@@ -47,13 +44,13 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Artist, Category, CategoryProduct, Location, Photo, Product, 
+const { Artist, Category, CategoryProduct, Location, Photo, Product,
   Customer, Order, OrderItem, Payment, User, Review } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product <---> Category
-Product.belongsToMany(Category, { through: CategoryProduct});
-Category.belongsToMany(Product, { through: CategoryProduct});
+Product.belongsToMany(Category, { through: CategoryProduct });
+Category.belongsToMany(Product, { through: CategoryProduct });
 
 // Product <---> Photo
 Product.hasMany(Photo);

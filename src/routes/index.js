@@ -11,7 +11,11 @@ const userRouter = require('./admin/user');
 const customerRouter = require('./admin/customer');
 const orderRouter = require('./admin/order');
 const reviewRouter = require('./admin/review');
+
 const routeCreateOrder = require('./client/routePostOrder');
+const routeGetFilteredOrder = require('./client/routeGetFilteredOrder');
+const routeAddEditOrderItem = require('./client/routeAddEditOrderItem');
+const routeDeleteOrderItem = require('./client/routeDeleteOrderItem');
 const routeMailer = require('./client/routeSendMail')
 
 const router = Router();
@@ -19,7 +23,12 @@ const router = Router();
 router.use('/products', routeGetAllProducts);
 router.use('/products', routeGetProductDetail);
 router.use('/categories', routeGetAllCategories);
+
 router.use('/order', routeCreateOrder);
+router.use('/order/', routeAddEditOrderItem);
+router.use('/order/', routeDeleteOrderItem);
+router.use('/orders', routeGetFilteredOrder);
+
 router.use('/user', routeGetDetailedUser);
 router.use('/mailer', routeMailer);
 
