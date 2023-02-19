@@ -2,34 +2,27 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 
-require('dotenv').config();
-const {
-  NODE_ENV,
-  DATABASE_URL
-} = process.env;
+let setSSL = false;
+console.log('el entorno es ', process.env.NODE_ENV);
 
-let sequelize;
-
-if (NODE_ENV === 'PROD') {
-  sequelize = new Sequelize(DATABASE_URL, {
-    dialect: 'postgres',
-    dialectOptions: {
-      ssl: true // Enable SSL/TLS for secure communication with the database
-    },
-    pool: {
-      acquire: 30000, // Maximum time, in milliseconds, that the pool will try to get a connection before throwing an error
-      idle: 10000, // Maximum time, in milliseconds, that a connection can be idle before being released
-      min: 0, // Minimum number of connections in the pool
-      max: 10 // Maximum number of connections in the pool
-    },
-    logging: false // Disable SQL query logging for production environments
-  });
-} else {
-  sequelize = new Sequelize(DATABASE_URL, {
-    logging: false,
-    native: false,
-  });
+if (process.env.NODE_ENV === 'production') {
+  setSSL = true;
 }
+console.log('el SSL es ', setSSL)
+
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: setSSL
+  },
+  pool: {
+    acquire: 30000, 
+    idle: 10000, 
+    min: 0, 
+    max: 10 
+  },
+  logging: false
+});
 
 const basename = path.basename(__filename);
 
@@ -101,5 +94,5 @@ Review.belongsTo(Product);
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
-  conn: sequelize,     // para importart la conexión { conn } = require('./db.js');
+  sequelize     // para importart la conexión { conn } = require('./db.js');
 };

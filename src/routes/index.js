@@ -16,6 +16,7 @@ const routeCreateOrder = require('./client/routePostOrder');
 const routeGetFilteredOrder = require('./client/routeGetFilteredOrder');
 const routeAddEditOrderItem = require('./client/routeAddEditOrderItem');
 const routeDeleteOrderItem = require('./client/routeDeleteOrderItem');
+const routeMailer = require('./client/routeSendMail')
 
 const router = Router();
 
@@ -29,6 +30,7 @@ router.use('/order/', routeDeleteOrderItem);
 router.use('/orders', routeGetFilteredOrder);
 
 router.use('/user', routeGetDetailedUser);
+router.use('/mailer', routeMailer);
 
 // Admin routes
 router.use('/admin', artistRouter);
