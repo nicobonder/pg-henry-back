@@ -1,6 +1,7 @@
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
+require('dotenv').config();
 
 let setSSL = false;
 console.log('el entorno es ', process.env.NODE_ENV);
