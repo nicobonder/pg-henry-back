@@ -14,7 +14,7 @@ const reviewRouter = require('./admin/review');
 
 const routeCreateOrder = require('./client/routePostOrder');
 const routeGetFilteredOrder = require('./client/routeGetFilteredOrder');
-const routeAddEditOrderItem = require('./client/routeAddEditOrderItem');
+const routeAddEditOrderItems = require('./client/routeAddEditOrderItems');
 const routeDeleteOrderItem = require('./client/routeDeleteOrderItem');
 const routeMailer = require('./client/routeSendMail')
 
@@ -25,7 +25,7 @@ router.use('/products', routeGetProductDetail);
 router.use('/categories', routeGetAllCategories);
 
 router.use('/order', routeCreateOrder);
-router.use('/order/', routeAddEditOrderItem);
+router.use('/order/', routeAddEditOrderItems);
 router.use('/order/', routeDeleteOrderItem);
 router.use('/orders', routeGetFilteredOrder);
 
