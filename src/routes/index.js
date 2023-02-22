@@ -3,6 +3,7 @@ const routeGetAllProducts = require('./client/routeGetAllProducts');
 const routeGetProductDetail = require('./client/routeGetProductDetail');
 const routeGetAllCategories = require('./client/routeGetAllCategories');
 const routeGetDetailedUser = require('./client/routeGetDetailedUser');
+const routePostUser = require("./admin/user/routePostUser");
 const artistRouter = require('./admin/artist');
 const categoryRouter = require('./admin/category');
 const locationRouter = require('./admin/location');
@@ -22,6 +23,8 @@ const routeMailer = require('./client/routeSendMail')
 const miCuentaUserRouter = require('./client/user')
 const miCuentaCustomerRouter = require('./client/customer')
 
+const adminMiddleware = require('../middleware/adminMiddleware');
+
 const router = Router();
 
 router.use('/products', routeGetAllProducts);
@@ -34,6 +37,7 @@ router.use('/order/', routeDeleteOrderItem);
 router.use('/orders', routeGetFilteredOrder);
 
 router.use('/user', routeGetDetailedUser);
+router.use('/user', routePostUser);
 router.use('/mailer', routeMailer);
 
 // Admin routes
@@ -41,7 +45,7 @@ router.use('/admin', artistRouter);
 router.use('/admin', categoryRouter);
 router.use('/admin', locationRouter);
 router.use('/admin', productRouter);
-router.use('/admin', userRouter);
+router.use('/admin', /*adminMiddleware.decodeToken,*/ userRouter);
 router.use('/admin', customerRouter);
 router.use('/admin', orderRouter);
 router.use('/admin', reviewRouter);
