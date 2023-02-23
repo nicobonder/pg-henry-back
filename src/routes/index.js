@@ -24,6 +24,7 @@ const miCuentaUserRouter = require('./client/user')
 const miCuentaCustomerRouter = require('./client/customer')
 
 const adminMiddleware = require('../middleware/adminMiddleware');
+const routePayment = require('./client/routePayment');
 
 const router = Router();
 
@@ -35,6 +36,9 @@ router.use('/order', routeCreateOrder);
 router.use('/order/', routeAddEditOrderItems);
 router.use('/order/', routeDeleteOrderItem);
 router.use('/orders', routeGetFilteredOrder);
+
+// incorporo para la compra de MP, hacer require
+router.use("/pay", routePayment);
 
 router.use('/user', routeGetDetailedUser);
 router.use('/user', routePostUser);
