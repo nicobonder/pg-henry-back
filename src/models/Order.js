@@ -37,10 +37,6 @@ module.exports = (sequelize) => {
             type: DataTypes.INTEGER,
             defaultValue: 0
         },
-        payment_status:{
-            type: DataTypes.STRING,
-            defaultValue: ""
-        },
         merchant_order_id: {
             type: DataTypes.BIGINT,
             defaultValue: 0

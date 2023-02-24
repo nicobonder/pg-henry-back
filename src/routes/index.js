@@ -45,15 +45,15 @@ router.use('/user', routePostUser);
 router.use('/mailer', routeMailer);
 
 // Admin routes
-router.use('/admin', adminMiddleware.decodeToken, artistRouter);
-router.use('/admin', adminMiddleware.decodeToken, categoryRouter);
-router.use('/admin', adminMiddleware.decodeToken, locationRouter);
-router.use('/admin', adminMiddleware.decodeToken, productRouter);
-router.use('/admin', adminMiddleware.decodeToken, userRouter);
-router.use('/admin', adminMiddleware.decodeToken, customerRouter);
-router.use('/admin', adminMiddleware.decodeToken, orderRouter);
-router.use('/admin', adminMiddleware.decodeToken, reviewRouter);
-router.use('/admin', adminMiddleware.decodeToken, mailGenRouter);
+router.use('/admin', /* adminMiddleware.decodeToken, */ artistRouter);
+router.use('/admin', /* adminMiddleware.decodeToken, */ categoryRouter);
+router.use('/admin', /* adminMiddleware.decodeToken, */ locationRouter);
+router.use('/admin', /* adminMiddleware.decodeToken, */ productRouter);
+router.use('/admin', /* adminMiddleware.decodeToken, */ userRouter);
+router.use('/admin', /* adminMiddleware.decodeToken, */ customerRouter);
+router.use('/admin', /* adminMiddleware.decodeToken, */ orderRouter);
+router.use('/admin', /* adminMiddleware.decodeToken, */ reviewRouter);
+router.use('/admin', /* adminMiddleware.decodeToken, */ mailGenRouter);
 
 // Mi Cuenta routes
 router.use('/micuenta', miCuentaUserRouter);

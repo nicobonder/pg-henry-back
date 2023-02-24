@@ -29,9 +29,7 @@ const payment = async (req, res, next) => {
     const preference = {
       items: [
         {
-          // id: order.id,
           title: "tus entradas en Yazz",
-          picture_url: order.Photo,
           currency_id: "ARS",
           unit_price: order.TotalAmount,
           quantity: 1,
@@ -84,19 +82,18 @@ const getPaymentInfo = async (req, res, next) => {
       order
         .save()
         .then((_) => {
-          return res.redirect("http://localhost:" + process.env.PORT);
+          return res.redirect("http://localhost:3000");
         })
         .catch((err) => {
           console.error("error al guardar", err);
-          return res.redirect(
-            `http://localhost:${process.env.PORT}/?error=${err}&where=al+guardar`
-          );
+          // return res.redirect(
+          //   `http://localhost:3000/?error=${err}&where=saving`
+          // );
         });
     });
   } catch (error) {
     console.log(error);
   }
-  Order.findBy;
 };
 
 module.exports = { payment, getPaymentInfo };
