@@ -11,15 +11,6 @@ if (process.env.NODE_ENV === 'production') {
       console.log(`Server listening at port ${PORT}`);
     });
   });
-  //   sequelize.authenticate().then(() => {
-  //   console.log('Connected to the database');
-  //   server.listen(PORT, () => {
-  //     console.log('Server listening on port ', PORT);
-
-  //   });
-  // }).catch((error) => {
-  //   console.error('Error connecting to the database:', error);
-  // });
 } else {
   sequelize.sync({ force: true }).then(() => {
     setAllDb();
