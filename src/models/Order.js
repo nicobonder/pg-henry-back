@@ -32,6 +32,14 @@ module.exports = (sequelize) => {
             allowNull: false,
             defaultValue: 'Created',
             field: 'Status'
+        },
+        payment_id:{
+            type: DataTypes.INTEGER,
+            defaultValue: 0
+        },
+        merchant_order_id: {
+            type: DataTypes.BIGINT,
+            defaultValue: 0
         }
     }, {
         timestamps: false,

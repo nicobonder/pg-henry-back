@@ -4,9 +4,7 @@ const routeGetRecommendedProducts = require('./client/routeGetRecommendedProduct
 const routeGetProductDetail = require('./client/routeGetProductDetail');
 const routeGetAllCategories = require('./client/routeGetAllCategories');
 const routeGetDetailedUser = require('./client/routeGetDetailedUser');
-
 const routePostCustomer = require("./admin/customer/routePostCustomer");
-
 const routePostUser = require("./admin/user/routePostUser");
 const artistRouter = require('./admin/artist');
 const categoryRouter = require('./admin/category');
@@ -28,6 +26,7 @@ const miCuentaUserRouter = require('./client/user')
 const miCuentaCustomerRouter = require('./client/customer')
 
 const adminMiddleware = require('../middleware/adminMiddleware');
+const routePayment = require('./client/routePayment');
 
 const router = Router();
 
@@ -41,11 +40,12 @@ router.use('/order/', routeAddEditOrderItems);
 router.use('/order/', routeDeleteOrderItem);
 router.use('/orders', routeGetFilteredOrder);
 
+// incorporo para la compra de MP, hacer require
+router.use("/pay", routePayment);
+
 router.use('/user', routeGetDetailedUser);
 router.use('/user', routePostUser);
-
 router.use('/customer', routePostCustomer)
-
 router.use('/mailer', routeMailer);
 
 // Admin routes
