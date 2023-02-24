@@ -3,6 +3,9 @@ const routeGetAllProducts = require('./client/routeGetAllProducts');
 const routeGetProductDetail = require('./client/routeGetProductDetail');
 const routeGetAllCategories = require('./client/routeGetAllCategories');
 const routeGetDetailedUser = require('./client/routeGetDetailedUser');
+
+const routePostCustomer = require("./admin/customer/routePostCustomer");
+
 const routePostUser = require("./admin/user/routePostUser");
 const artistRouter = require('./admin/artist');
 const categoryRouter = require('./admin/category');
@@ -38,6 +41,9 @@ router.use('/orders', routeGetFilteredOrder);
 
 router.use('/user', routeGetDetailedUser);
 router.use('/user', routePostUser);
+
+router.use('/customer', routePostCustomer)
+
 router.use('/mailer', routeMailer);
 
 // Admin routes
