@@ -55,8 +55,6 @@ const payment = async (req, res, next) => {
     return await mercadopago.preferences
       .create(preference)
       .then((response) => res.status(200).send({ response }));
-    //se debe guardar en db el id que se obtiene de MP y se usa en getPaymentByID
-    // return res.status(200).json({ id: mp.body.id, items: req.body.items });
   } catch (error) {
     console.log(error);
     // next(error);
