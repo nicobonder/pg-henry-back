@@ -1,5 +1,5 @@
 const { Artist, Category, Location, Product, Photo, CategoryProduct,
-User, Customer, Order, OrderItem }  = require('../../db.js');
+User, Customer, Order, OrderItem, MailGen }  = require('../../db.js');
 
 const  setAllDb = async() => {
 
@@ -826,13 +826,21 @@ const  setAllDb = async() => {
             role: "User"
         },
         {
-            userName: "maria",
+            userName: "juanignaciomascarenhas@gmail.com",
+            role: "Admin"
+        },
+        {
+            userName: "diegoleonardoformoso@gmail.com",
             role: "User"
         },
         {
-            userName: "lola",
-            role: "User"
+            userName: "federico.rissone@gmail.com",
+            role: "Admin"
         },
+        {
+            userName: "frissone@villaconstitucion.gov.ar",
+            role: "Admin"
+        }
     ]
 
     await User.bulkCreate(users);  
@@ -912,7 +920,7 @@ const  setAllDb = async() => {
             customerId: 3,
             orderDate: "2023-02-02",
             totalAmount: 1500,
-            status: "Completed"
+            status: "Created"
         },
     ];
 
@@ -997,6 +1005,15 @@ const  setAllDb = async() => {
     ];
 
     OrderItem.bulkCreate(ordersItems);
+
+    MailGen.create({
+        productName: 'YAZZ',
+        productLink: 'https://pg-front-henry.vercel.app',
+        productCopyright: 'Copyright © 2023 YAZZ. Todos los derechos reservados.',
+        greeting: 'Hola',
+        signature: 'Saludos cordiales'
+    })
+
 }
 
 module.exports = { setAllDb };

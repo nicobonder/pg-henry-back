@@ -1,20 +1,28 @@
-require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
+require('dotenv').config();
+
+let setSSL = false;
+console.log('el entorno es ', process.env.NODE_ENV);
+
+if (process.env.NODE_ENV === 'production') {
+  setSSL = true;
+}
+console.log('el SSL es ', setSSL)
 
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
   dialect: 'postgres',
   dialectOptions: {
-    ssl: true // Enable SSL/TLS for secure communication with the database
+    ssl: setSSL
   },
   pool: {
-    acquire: 30000, // Maximum time, in milliseconds, that the pool will try to get a connection before throwing an error
-    idle: 10000, // Maximum time, in milliseconds, that a connection can be idle before being released
-    min: 0, // Minimum number of connections in the pool
-    max: 10 // Maximum number of connections in the pool
+    acquire: 30000, 
+    idle: 10000, 
+    min: 0, 
+    max: 10 
   },
-  logging: false // Disable SQL query logging for production environments
+  logging: false
 });
 
 const basename = path.basename(__filename);
@@ -37,13 +45,13 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Artist, Category, CategoryProduct, Location, Photo, Product, 
+const { Artist, Category, CategoryProduct, Location, Photo, Product,
   Customer, Order, OrderItem, Payment, User, Review } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product <---> Category
-Product.belongsToMany(Category, { through: CategoryProduct});
-Category.belongsToMany(Product, { through: CategoryProduct});
+Product.belongsToMany(Category, { through: CategoryProduct });
+Category.belongsToMany(Product, { through: CategoryProduct });
 
 // Product <---> Photo
 Product.hasMany(Photo);

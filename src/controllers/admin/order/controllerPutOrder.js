@@ -1,9 +1,11 @@
 const constants = require('../../../utils/constants');
-const { Order } = require('../../../db');
+const { Order, MailGen } = require('../../../db');
 const httpStatusCodes = require('../../../utils/http-status-codes');
 const ValidationError = require('../../../utils/validation-error');
+const mailer = require('../../../mailerAdmin');
 
 const editOrder = async (data) => {
+    // console.log('editOrder data: ', data);
     let order = await Order.findByPk(data.id);
 
     // Validate status change
@@ -27,11 +29,37 @@ const editOrder = async (data) => {
         );
     }
 
+
     await order.update({
         status: data.status
     });
 
+    // Send event to customer
+    try {
+        const mailGenConfig = await MailGen.findByPk(1);
+        const to = data.Customer.email;
+        const subject = `YAZZ - Orden de pedido N° ${data.id} actualizado`;
+        const body = {
+            name: data.Customer.name,  // Nombre del sitio
+            greeting: mailGenConfig.greeting,
+            signature: mailGenConfig.signature,
+            intro: `Su pedido N° ${data.id} se ha actualizado al estado ${data.status}.`,
+            outro: "Acceda con sus datos al sitio para ver el detalle de su pedido."
+        }
+
+        await mailer(to, subject, body);
+    } catch (error) {
+        throw new ValidationError(
+            'Email notification error',
+            {
+                notificationError: constants.EMAIL_NOTIFICATION_ERROR
+            },
+            httpStatusCodes.INTERNAL_SERVER
+        );
+    }
+
     return order;
 }
+
 
 module.exports = { editOrder };
