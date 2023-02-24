@@ -1,12 +1,8 @@
 const { Router } = require('express');
 const routeGetAllProducts = require('./client/routeGetAllProducts');
-const routeGetRecommendedProducts = require('./client/routeGetRecommendedProducts');
 const routeGetProductDetail = require('./client/routeGetProductDetail');
 const routeGetAllCategories = require('./client/routeGetAllCategories');
 const routeGetDetailedUser = require('./client/routeGetDetailedUser');
-
-const routePostCustomer = require("./admin/customer/routePostCustomer");
-
 const routePostUser = require("./admin/user/routePostUser");
 const artistRouter = require('./admin/artist');
 const categoryRouter = require('./admin/category');
@@ -34,7 +30,6 @@ const router = Router();
 
 router.use('/products', routeGetAllProducts);
 router.use('/products', routeGetProductDetail);
-router.use('/recommended-products', routeGetRecommendedProducts);
 router.use('/categories', routeGetAllCategories);
 
 router.use('/order', routeCreateOrder);
@@ -47,9 +42,6 @@ router.use("/pay", routePayment);
 
 router.use('/user', routeGetDetailedUser);
 router.use('/user', routePostUser);
-
-router.use('/customer', routePostCustomer)
-
 router.use('/mailer', routeMailer);
 
 // Admin routes
