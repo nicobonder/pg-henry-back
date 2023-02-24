@@ -49,6 +49,7 @@ router.use('/customer', routePostCustomer)
 router.use('/mailer', routeMailer);
 
 // Admin routes
+// COMENTADO ADMINMIDDLEWARE PARA PODER HACER PRUEBAS EN FRONT
 router.use('/admin', /* adminMiddleware.decodeToken, */ artistRouter);
 router.use('/admin', /* adminMiddleware.decodeToken, */ categoryRouter);
 router.use('/admin', /* adminMiddleware.decodeToken, */ locationRouter);
