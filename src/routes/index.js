@@ -25,6 +25,8 @@ const routeMailer = require('./client/routeSendMail')
 const miCuentaUserRouter = require('./client/user')
 const miCuentaCustomerRouter = require('./client/customer')
 
+const postCustomer = require("./admin/customer/routePostCustomer");
+
 const adminMiddleware = require('../middleware/adminMiddleware');
 const routePayment = require('./client/routePayment');
 
@@ -49,6 +51,8 @@ router.use('/user', routeGetDetailedUser);
 router.use('/user', routePostUser);
 router.use('/customer', routePostCustomer)
 router.use('/mailer', routeMailer);
+
+router.use('/customer', postCustomer);
 
 // Admin routes
 router.use('/admin', adminMiddleware.decodeToken, artistRouter);
