@@ -80,7 +80,12 @@ const getPaymentInfo = async (req, res, next) => {
       order
         .save()
         .then((_) => {
-          return res.redirect("http://localhost:3000");
+          const isTest = process.env.NODE_ENV === "TEST";
+          const redirectUrl = isTest
+            ? "http://localhost:3000"
+            : "https://pg-front-henry.vercel.app/";
+
+          return res.redirect(redirectUrl);
         })
         .catch((err) => {
           console.error("error al guardar", err);
