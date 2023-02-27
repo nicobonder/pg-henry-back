@@ -7,6 +7,7 @@ mercadopago.configure({
   access_token: process.env.ACCESS_TOKEN,
 });
 
+
 let backRedirectUrl = "";
 let frontRedirectUrl = "";
 
@@ -19,7 +20,7 @@ if (process.env.NODE_ENV === "TEST") {
   };
   const payment = async (req, res, next) => {
     const order = req.body;
-
+=======
   try {
 
     // VALIDACION CON DB
