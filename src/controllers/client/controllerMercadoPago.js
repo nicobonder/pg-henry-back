@@ -7,8 +7,8 @@ mercadopago.configure({
   access_token: process.env.ACCESS_TOKEN,
 });
 
-const backRedirectUrl = "";
-const frontRedirectUrl = "";
+let backRedirectUrl = "";
+let frontRedirectUrl = "";
 
 if (process.env.NODE_ENV === "TEST") {
   backRedirectUrl = "http://localhost:3001";
