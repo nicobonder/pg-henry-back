@@ -54,9 +54,9 @@ const payment = async (req, res, next) => {
       },
       back_urls: {
         //rutas de acuerdo a como haya salido la transacion
-        success: backRedirectUrl + "/pay/",
-        failure: backRedirectUrl + "/pay/",
-        pending: frontRedirectUrl,
+        success: "http://localhost:" + process.env.PORT + "/pay/",
+        failure: "http://localhost:" + process.env.PORT + "/pay/",
+        pending: "http://localhost:" + process.env.PORT + "/pay/",
       },
       statement_descriptor: "Yazz Shows",
       auto_return: "approved",
@@ -66,7 +66,7 @@ const payment = async (req, res, next) => {
 
     return await mercadopago.preferences
       .create(preference)
-      .then((response) => {res.status(200).send({ response })});
+      .then((response) => res.status(200).send({ response }));
   } catch (error) {
     console.log(error);
     // next(error);
@@ -94,7 +94,7 @@ const getPaymentInfo = async (req, res, next) => {
       order
         .save()
         .then((_) => {
-          return res.redirect(frontRedirectUrl);
+          return res.redirect("http://localhost:3000");
         })
         .catch((err) => {
           console.error("error al guardar", err);
