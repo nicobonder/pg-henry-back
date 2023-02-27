@@ -16,10 +16,9 @@ if (process.env.NODE_ENV === "TEST") {
 } else {
   backRedirectUrl = "https://pg-henry.up.railway.app";
   frontRedirectUrl = "https://pg-front-henry.vercel.app";
-
+  };
   const payment = async (req, res, next) => {
     const order = req.body;
-  };
 
   try {
 
