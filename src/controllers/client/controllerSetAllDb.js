@@ -789,7 +789,7 @@ const { Artist, Category, Location, Product, Photo, CategoryProduct,
       const users = [
           {
               userName: "goya0310@gmail.com",
-              role: "Admin"
+              role: "User"
           },
           {
               userName: "nicolasbonder@gmail.com",
@@ -842,15 +842,15 @@ const { Artist, Category, Location, Product, Photo, CategoryProduct,
       const customers = [
           {
               userId: 1,
-              name: "Pedro Miranda",
-              address: "Gallo 176 8A",
-              city: "CABA",
-              state: "CABA",
-              zip: "1782",
-              email: "goya0310@gmail.com",
-              telephone: "1199881188",
-              document: 22222222,
-              birthDate: "1972-01-01"
+            name: "Diego Federico Llaya",
+            address: "Bedoya",
+            city: "Cordoba",
+            state: "Cordoba",
+            zip: "5000",
+            email: "goya0310@gmail.com",
+            telephone: "3513544346",
+            document: 31052062,
+            birthDate: "1984-10-03"
           },
           {
               userId: 2,
