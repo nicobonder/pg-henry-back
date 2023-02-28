@@ -16,6 +16,18 @@ const editUser = async (id, userName, password, role, status) => {
       throw new Error(error)
     }
   }
+  else if(status === 'Active'){
+    try {
+      const firebaseUser = await admin.auth().getUserByEmail(userName);
+      await admin.auth().updateUser(
+        firebaseUser.uid,
+        {
+          disabled: false
+        });
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
 
   await user.update({
     userName,
