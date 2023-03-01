@@ -103,6 +103,9 @@ async function updateStock(orderId) {
         // Guardar una copia temporal del stock original
         const originalStock = productToUpdate.stock;
 
+        // Actualizar el stock
+        productToUpdate.stock = productToUpdate.stock - orderItem.quantity;
+        
         // Validar el nuevo stock
         if (originalStock < orderItem.quantity) {
           throw new Error(
@@ -118,6 +121,13 @@ async function updateStock(orderId) {
           productToUpdate.stock
         );
 
+        // Validar el nuevo stock
+        if (productToUpdate.stock < 0) {
+          throw new Error(
+            `Stock insuficiente para el producto ${productToUpdate.id}`
+          );
+        }
+
         // Guardar los cambios
         await productToUpdate.save({ transaction });
       })
@@ -126,6 +136,19 @@ async function updateStock(orderId) {
     // Confirmar la transacción
     await transaction.commit();
   } catch (error) {
+    // Si hay un error, revertir la transacción y restaurar el stock original
+    if (transaction) {
+      await transaction.rollback();
+      await Promise.all(
+        orderItems.map(async (orderItem) => {
+          const productToUpdate = await Product.findByPk(orderItem.productId);
+          productToUpdate.stock = originalStock;
+          await productToUpdate.save();
+        })
+      );
+    }
+    console.error(error);
+    throw error;
     // // Si hay un error, revertir la transacción y restaurar el stock original
     // if (transaction) {
     //   await transaction.rollback();
@@ -150,6 +173,15 @@ const getPaymentInfo = async (req, res, next) => {
       if (order.payment_status === "null")
         return res.redirect(frontRedirectUrl);
 
+      if (order.status === "Completed") {
+        try {
+          updateStock(external_reference);
+        } catch (error) {
+          order.status = "Canceled";
+          console.log(error);
+          // Redireccionar a pagina que se avisa que el hubo un error en la compra y se devolverá el dinero
+        }
+      }
       const changeStatus = async () => {
         if (order.payment_status === "approved") {
           try {
