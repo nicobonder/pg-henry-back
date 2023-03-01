@@ -24,10 +24,7 @@ const routeAddEditOrderItems = require('./client/routeAddEditOrderItems');
 const routeDeleteOrderItem = require('./client/routeDeleteOrderItem');
 const routeMailer = require('./client/routeSendMail')
 
-// const miCuentaUserRouter = require('./client/user')
-const miCuentaCustomerRouter = require('./client/customer')
-const miCuentaOrdersRouter = require('./mi-cuenta/routeGetOrders');
-const miCuentaReviewsRouter = require('./mi-cuenta/routeGetReviews');
+const miCuentaRouter = require('./mi-cuenta')
 
 const postCustomer = require("./admin/customer/routePostCustomer");
 
@@ -77,9 +74,6 @@ router.use('/admin', adminMiddleware.decodeToken, reviewRouter);
 router.use('/admin', adminMiddleware.decodeToken, mailGenRouter);
 
 // Mi Cuenta routes
-// router.use('/micuenta', miCuentaUserRouter);
-router.use('/micuenta', miCuentaCustomerRouter);
-router.use('/micuenta', miCuentaOrdersRouter);
-router.use('/micuenta', miCuentaReviewsRouter);
+router.use('/micuenta', miCuentaRouter);
 
 module.exports = router;

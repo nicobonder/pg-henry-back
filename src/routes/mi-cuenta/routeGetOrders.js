@@ -2,9 +2,9 @@ const { Router } = require('express');
 const { getOrders } = require('../../controllers/mi-cuenta/controllerGetOrders');
 const router = Router();
 
-// GET /micuenta/orders/:id
+// GET /micuenta/:customerId/orders
 router.get(
-    '/orders/:customerId',
+    '/:customerId/orders',
     async (req, res, next) => {
         try {
             const { customerId } = req.params;
@@ -16,7 +16,7 @@ router.get(
 
             res.status(200).json(orders);
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             next(error)
         }
     }
