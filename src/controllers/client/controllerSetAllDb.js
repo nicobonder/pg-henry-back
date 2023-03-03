@@ -885,8 +885,8 @@ const  setAllDb = async() => {
             state: "CHACO",
             zip: "8971",
             email: "nicolasbonder@gmail.com",
-            telephone: "+54 11 6543-2211",
-            document: 1111111,
+            telephone: "541165432211",
+            document: 11111111,
             birthDate: "1990-06-15"
         },
         {
@@ -897,8 +897,8 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "diegollaya@gmail.com",
-            telephone: "11-9-8892-1111",
-            document: 1111112,
+            telephone: "11988921111",
+            document: 11111112,
             birthDate: "1986-03-05"
         },
         {
@@ -909,8 +909,8 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "federico.rissone@gmail.com",
-            telephone: "11-9-8892-1111",
-            document: 1111113,
+            telephone: "11988921111",
+            document: 11111113,
             birthDate: "1999-06-05"
         },
         {
@@ -921,8 +921,8 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "frissone@villaconstitucion.gov.ar",
-            telephone: "11-9-8892-1111",
-            document: 1111114,
+            telephone: "11988921111",
+            document: 11111114,
             birthDate: "1999-06-23"
         },
         {
@@ -933,8 +933,8 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "juanignaciomascarenhas@gmail.com",
-            telephone: "11-9-8892-1111",
-            document: 1111115,
+            telephone: "11988921111",
+            document: 11111115,
             birthDate: "1993-02-15"
         },
         {
@@ -945,8 +945,8 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "angelzabaleta08@gmail.com",
-            telephone: "11-9-8892-1111",
-            document: 1111116,
+            telephone: "11988921111",
+            document: 11111116,
             birthDate: "1963-01-17"
         },
         {
@@ -957,8 +957,8 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "angelzabaleta08@hotmail.com",
-            telephone: "11-9-8892-1111",
-            document: 1111117,
+            telephone: "11988921111",
+            document: 11111117,
             birthDate: "1953-11-17"
         },
         {
@@ -969,8 +969,8 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "franprueba@gmail.com",
-            telephone: "11-9-8892-1111",
-            document: 1111118,
+            telephone: "11988921111",
+            document: 11111118,
             birthDate: "1978-12-04"
         },
         {
@@ -981,8 +981,8 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "bercinigena@gmail.com",
-            telephone: "11-9-8892-1111",
-            document: 1111119,
+            telephone: "11988921111",
+            document: 11111119,
             birthDate: "1997-11-24"
         },
         {
@@ -993,8 +993,8 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "diegoleonardoformoso@gmail.com",
-            telephone: "11-9-8892-1111",
-            document: 2111111,
+            telephone: "11988921111",
+            document: 21111111,
             birthDate: "1957-12-24"
         },
         {
@@ -1005,8 +1005,8 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "silvestro.franco19@gmail.com",
-            telephone: "11-9-8892-1111",
-            document: 2111112,
+            telephone: "11988921111",
+            document: 21111112,
             birthDate: "1977-04-24"
         },
         {
@@ -1017,8 +1017,8 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "juanignaciomascarenhas@luisgianneo.org",
-            telephone: "11-9-8892-1111",
-            document: 2111113,
+            telephone: "11988921111",
+            document: 21111113,
             birthDate: "1993-02-15"
         },
     ];
