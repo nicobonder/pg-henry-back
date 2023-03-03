@@ -770,6 +770,27 @@ const  setAllDb = async() => {
                 }
             ]
         },
+        {
+            locationId: 1,
+            artistId: 30,
+            name: 'Sacando viruta con Vientos de Nordelta ',
+            description: '¡Bienvenidos a una noche de tango inolvidable con el ensamble "Vientos de Nordelta"! Este grupo de músicos talentosos se unen para traernos la verdadera esencia del tango argentino.',
+            startDate: '2023-03-02',
+            startTime: '22:00:00',
+            stock: 750,
+            price: 99,
+            categories : [
+                {
+                    id : 6
+                },
+            ],
+
+            photo : [
+                {
+                    path: 'https://res.cloudinary.com/dfuozesaq/image/upload/v1675357470/HenryMusic/tango5_ncm2lw.jpg',
+                }
+            ]
+        },
         
 
     ];
@@ -834,6 +855,10 @@ const  setAllDb = async() => {
         {
             userName: "silvestro.franco19@gmail.com",
             role: "Admin"
+        },
+        {
+            userName: "juanignaciomascarenhas@luisgianneo.org",
+            role: "User"
         }
     ]
 
@@ -983,7 +1008,19 @@ const  setAllDb = async() => {
             telephone: "11-9-8892-1111",
             document: 2111112,
             birthDate: "1977-04-24"
-        }
+        },
+        {
+            userId: 13,
+            name: "Juan Mascarenhas",
+            address: "Jazmin 2323",
+            city: "Mar del Plata",
+            state: "BUENOS AIRES",
+            zip: "9911",
+            email: "juanignaciomascarenhas@luisgianneo.org",
+            telephone: "11-9-8892-1111",
+            document: 2111113,
+            birthDate: "1993-02-15"
+        },
     ];
 
     await Customer.bulkCreate(customers);
@@ -1024,6 +1061,12 @@ const  setAllDb = async() => {
             orderDate: "2023-02-02",
             totalAmount: 1500,
             status: "Canceled"
+        },
+        {
+            customerId: 13,
+            orderDate: "2023-03-01",
+            totalAmount: 1500,
+            status: "Completed"
         },
     ];
 
@@ -1103,6 +1146,13 @@ const  setAllDb = async() => {
             productId: 15,
             quantity: 3,
             unitPrice: 500,
+            totalAmount: 1500
+        },
+        {
+            orderId: 7,
+            productId: 31,
+            quantity: 1,
+            unitPrice: 1500,
             totalAmount: 1500
         },
     ];
