@@ -897,7 +897,7 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "diegollaya@gmail.com",
-            telephone: "11988921111",
+            telephone: "1198892111",
             document: 11111112,
             birthDate: "1986-03-05"
         },
@@ -909,7 +909,7 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "federico.rissone@gmail.com",
-            telephone: "11988921111",
+            telephone: "1198892111",
             document: 11111113,
             birthDate: "1999-06-05"
         },
@@ -921,7 +921,7 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "frissone@villaconstitucion.gov.ar",
-            telephone: "11988921111",
+            telephone: "1198892111",
             document: 11111114,
             birthDate: "1999-06-23"
         },
@@ -933,7 +933,7 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "juanignaciomascarenhas@gmail.com",
-            telephone: "11988921111",
+            telephone: "1198892111",
             document: 11111115,
             birthDate: "1993-02-15"
         },
@@ -945,7 +945,7 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "angelzabaleta08@gmail.com",
-            telephone: "11988921111",
+            telephone: "3212195232",
             document: 11111116,
             birthDate: "1963-01-17"
         },
@@ -957,7 +957,7 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "angelzabaleta08@hotmail.com",
-            telephone: "11988921111",
+            telephone: "1198892111",
             document: 11111117,
             birthDate: "1953-11-17"
         },
@@ -969,7 +969,7 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "franprueba@gmail.com",
-            telephone: "11988921111",
+            telephone: "1198892111",
             document: 11111118,
             birthDate: "1978-12-04"
         },
@@ -981,7 +981,7 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "bercinigena@gmail.com",
-            telephone: "11988921111",
+            telephone: "1198892111",
             document: 11111119,
             birthDate: "1997-11-24"
         },
@@ -993,7 +993,7 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "diegoleonardoformoso@gmail.com",
-            telephone: "11988921111",
+            telephone: "1198892111",
             document: 21111111,
             birthDate: "1957-12-24"
         },
@@ -1005,7 +1005,7 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "silvestro.franco19@gmail.com",
-            telephone: "11988921111",
+            telephone: "1198892111",
             document: 21111112,
             birthDate: "1977-04-24"
         },
@@ -1017,7 +1017,7 @@ const  setAllDb = async() => {
             state: "BUENOS AIRES",
             zip: "9911",
             email: "juanignaciomascarenhas@luisgianneo.org",
-            telephone: "11988921111",
+            telephone: "1198892111",
             document: 21111113,
             birthDate: "1993-02-15"
         },
