@@ -28,7 +28,9 @@ const { DB_DEPLOY } = process.env;
 // });
 
 //DEPLOY EN RAILWAY
-const sequelize = new Sequelize(DB_DEPLOY, {
+const sequelize = new Sequelize(`postgres://postgres:Betun8486!@localhost:5432/Jazz`, {
+  
+//const sequelize = new Sequelize(DB_DEPLOY, {
   dialect: 'postgres',
   dialectOptions: {
     ssl: setSSL
