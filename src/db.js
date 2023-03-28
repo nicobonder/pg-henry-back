@@ -11,7 +11,24 @@ if (process.env.NODE_ENV === 'production') {
 }
 console.log('el SSL es ', setSSL)
 
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
+const { DB_DEPLOY } = process.env;
+
+// const sequelize = new Sequelize(process.env.DATABASE_URL, {
+//   dialect: 'postgres',
+//   dialectOptions: {
+//     ssl: setSSL
+//   },
+//   pool: {
+//     acquire: 30000, 
+//     idle: 10000, 
+//     min: 0, 
+//     max: 10 
+//   },
+//   logging: false
+// });
+
+//DEPLOY EN RAILWAY
+const sequelize = new Sequelize(DB_DEPLOY, {
   dialect: 'postgres',
   dialectOptions: {
     ssl: setSSL
