@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === "TEST") {
   backRedirectUrl = "http://localhost:3001";
   frontRedirectUrl = "http://localhost:3000";
 } else {
-  backRedirectUrl = "https://pg-henry.up.railway.app";
+  backRedirectUrl = "groove-back.up.railway.app"; //DEPLOY RAILWAY
   frontRedirectUrl = "https://pg-front-henry.vercel.app";
 }
 
