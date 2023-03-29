@@ -40,10 +40,12 @@ const getAllProducts = async () => {
     },
   );
 
+  console.log(products);
   products.forEach(product => {
     product.dataValues.isShowFinished = isShowFinished(product.dataValues.StartDate, product.dataValues.StartTime)
   });
 
+  console.log('en el controler');
   return products;
 };
 

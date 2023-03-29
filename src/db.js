@@ -13,24 +13,7 @@ console.log('el SSL es ', setSSL)
 
 const { DB_DEPLOY } = process.env;
 
-// const sequelize = new Sequelize(process.env.DATABASE_URL, {
-//   dialect: 'postgres',
-//   dialectOptions: {
-//     ssl: setSSL
-//   },
-//   pool: {
-//     acquire: 30000, 
-//     idle: 10000, 
-//     min: 0, 
-//     max: 10 
-//   },
-//   logging: false
-// });
-
-//DEPLOY EN RAILWAY
-const sequelize = new Sequelize(`postgres://postgres:Betun8486!@localhost:5432/Jazz`, {
-  
-//const sequelize = new Sequelize(DB_DEPLOY, {
+const sequelize = new Sequelize(process.env.DB_DEPLOY, {
   dialect: 'postgres',
   dialectOptions: {
     ssl: setSSL
@@ -43,6 +26,23 @@ const sequelize = new Sequelize(`postgres://postgres:Betun8486!@localhost:5432/J
   },
   logging: false
 });
+
+//DEPLOY EN RAILWAY
+//const sequelize = new Sequelize(`postgres://postgres:Betun8486!@localhost:5432/Jazz`, {
+  
+// const sequelize = new Sequelize(DB_DEPLOY, {
+//   dialect: 'postgres',
+//   dialectOptions: {
+//     ssl: setSSL
+//   },
+//   pool: {
+//     acquire: 30000, 
+//     idle: 10000, 
+//     min: 0, 
+//     max: 10 
+//   },
+//   logging: false
+// });
 
 const basename = path.basename(__filename);
 
