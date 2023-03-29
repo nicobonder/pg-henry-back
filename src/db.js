@@ -13,7 +13,7 @@ console.log('el SSL es ', setSSL)
 
 const { DB_DEPLOY } = process.env;
 
-const sequelize = new Sequelize(process.env.DB_DEPLOY, {
+const sequelize = new Sequelize(DB_DEPLOY, {
   dialect: 'postgres',
   dialectOptions: {
     ssl: setSSL
