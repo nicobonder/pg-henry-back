@@ -5,15 +5,15 @@ require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 
 if (process.env.NODE_ENV === 'production') {
-  sequelize.sync({ force: true }).then(() => {
-    setAllDb();
+  sequelize.sync({ force: false }).then(() => {
+    // setAllDb();
     server.listen(PORT, () => {
       console.log(`Server listening at port ${PORT}`);
     });
   });
 } else {
-  sequelize.sync({ force: true }).then(() => {
-    setAllDb();
+  sequelize.sync({ force: false }).then(() => {
+    // setAllDb();
     server.listen(PORT, () => {
       console.log(`Server listening at port ${PORT}`);
     });
