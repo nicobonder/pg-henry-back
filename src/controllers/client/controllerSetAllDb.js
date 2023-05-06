@@ -313,7 +313,7 @@ const  setAllDb = async() => {
             startDate: '2023-05-13',
             startTime: '18:00:00',
             stock: 1200,
-            price: 1500,
+            price: 1800,
             categories : [
                 {
                     id : 2
