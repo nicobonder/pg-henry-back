@@ -6,18 +6,18 @@ require('dotenv').config();
 let setSSL = false;
 console.log('el entorno es ', process.env.NODE_ENV);
 
-if (process.env.NODE_ENV === 'production') {
-  setSSL = true;
-}
-console.log('el SSL es ', setSSL)
+// if (process.env.NODE_ENV === 'production') {
+//   setSSL = true;
+// }
+// console.log('el SSL es ', setSSL)
 
 const { DB_DEPLOY } = process.env;
 
-const sequelize = new Sequelize(DB_DEPLOY, {
+const sequelize = new Sequelize(DB_DEPLOY, { //Esto hace que se conecte a la DB de deploy, en Railway
   dialect: 'postgres',
-  dialectOptions: {
-    ssl: setSSL
-  },
+  // dialectOptions: {
+  //   ssl: setSSL
+  // },
   pool: {
     acquire: 30000, 
     idle: 10000, 

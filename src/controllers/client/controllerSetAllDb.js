@@ -182,10 +182,10 @@ const  setAllDb = async() => {
             artistId: 3,
             name: 'Harmonic Harmony Return',
             description: 'Harmonic Harmony te invita a una noche de música en vivo, con obras de los compositores más importantes de la historia. Desde el Concerto para Violín de Bach hasta la Sinfonía No. 9 de Beethoven',
-            startDate: '2023-07-04',
+            startDate: '2023-07-07',
             startTime: '14:00:00',
             stock: 560,
-            price: 2500,
+            price: 4500,
             categories : [
                 {
                     id : 1
@@ -203,7 +203,7 @@ const  setAllDb = async() => {
             artistId: 4,
             name: 'Grand Orchestra In Concert',
             description: 'Grand Orchestra te invita a una noche única de música clásica. Con nuestro talentoso grupo de músicos y nuestro repertorio de algunos de los compositores más grandes de la historia',
-            startDate: '2023-07-05',
+            startDate: '2023-07-08',
             startTime: '15:00:00',
             stock: 1200,
             price: 4500,
@@ -224,7 +224,7 @@ const  setAllDb = async() => {
             artistId: 5,
             name: 'The Majestic Ensemble Show',
             description: 'The Majestic Ensemble te ofrece una noche de música que nunca olvidarás. Con un programa que incluye algunas de las obras más famosas de la historia, como la Novena Sinfonía de Beethoven y la Sinfonía No. 40 de Mozart',
-            startDate: '2023-07-06',
+            startDate: '2023-07-08',
             startTime: '16:00:00',
             stock: 1100,
             price: 500,
@@ -247,7 +247,7 @@ const  setAllDb = async() => {
             artistId: 6,
             name: 'DJ Synapse Pool Party',
             description: 'Bienvenidos a una experiencia musical sin igual, donde la electrónica y la pasión por la música se unen para crear algo único y sorprendente. ¡Prepárense para bailar y disfrutar!',
-            startDate: '2023-07-07',
+            startDate: '2023-07-08',
             startTime: '17:00:00',
             stock: 1150,
             price: 1500,
@@ -547,7 +547,7 @@ const  setAllDb = async() => {
             startDate: '2023-07-20',
             startTime: '13:00:00',
             stock: 650,
-            price: 2500,
+            price: 4500,
             categories : [
                 {
                     id : 4
@@ -568,7 +568,7 @@ const  setAllDb = async() => {
             startDate: '2023-07-20',
             startTime: '20:00:00',
             stock: 650,
-            price: 2500,
+            price: 4500,
             categories : [
                 {
                     id : 5
@@ -589,7 +589,7 @@ const  setAllDb = async() => {
             startDate: '2023-07-21',
             startTime: '22:00:00',
             stock: 650,
-            price: 2500,
+            price: 4500,
             categories : [
                 {
                     id : 5
@@ -610,7 +610,7 @@ const  setAllDb = async() => {
             startDate: '2023-07-22',
             startTime: '21:00:00',
             stock: 650,
-            price: 2500,
+            price: 4500,
             categories : [
                 {
                     id : 5
@@ -1047,7 +1047,7 @@ const  setAllDb = async() => {
         {
             customerId: 2,
             orderDate: "2022-12-27",
-            totalAmount: 2500,
+            totalAmount: 4500,
             status: "Canceled"
         },
         {
