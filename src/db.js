@@ -27,23 +27,6 @@ const sequelize = new Sequelize(DB_DEPLOY, { //Esto hace que se conecte a la DB 
   logging: false
 });
 
-//DEPLOY EN RAILWAY
-//const sequelize = new Sequelize(`postgres://postgres:pasworddesiempre@localhost:5432/Jazz`, {
-  
-// const sequelize = new Sequelize(DB_DEPLOY, {
-//   dialect: 'postgres',
-//   dialectOptions: {
-//     ssl: setSSL
-//   },
-//   pool: {
-//     acquire: 30000, 
-//     idle: 10000, 
-//     min: 0, 
-//     max: 10 
-//   },
-//   logging: false
-// });
-
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
